@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Tech Garden — iPhone 17 Flyer</title>
+<style>
+  @font-face {
+    font-family: 'Archivo';
+    src: url('assets/fonts/Archivo.woff2') format('woff2');
+    font-weight: 100 900;
+  }
+  @font-face {
+    font-family: 'Archivo Black';
+    src: url('assets/fonts/ArchivoBlack.woff2') format('woff2');
+    font-weight: 400;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; }
+  body {
+    font-family: 'Archivo', 'DejaVu Sans', sans-serif;
+    color: #eaf6ef;
+    overflow: hidden;
+  }
+
+  .poster {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+    background:
+      radial-gradient(900px 700px at 88% 44%, rgba(52, 224, 138, 0.10), transparent 65%),
+      radial-gradient(700px 520px at -8% 6%, rgba(52, 224, 138, 0.12), transparent 60%),
+      radial-gradient(800px 600px at 50% 108%, rgba(24, 130, 90, 0.16), transparent 65%),
+      linear-gradient(168deg, #081a12 0%, #061510 40%, #04100b 100%);
+    background-color: #05130d;
+    overflow: hidden;
+  }
+
+  /* ---------- header ---------- */
+  .header {
+    position: absolute;
+    top: 56px; left: 64px; right: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 20px; }
+  .logo-tile {
+    width: 78px; height: 78px;
+    border-radius: 20px;
+    background: linear-gradient(150deg, rgba(52,224,138,0.18), rgba(52,224,138,0.04));
+    border: 1px solid rgba(52,224,138,0.35);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-text .the {
+    font-size: 15px; font-weight: 700; letter-spacing: 0.42em;
+    color: #79a893; margin-bottom: 4px;
+  }
+  .logo-text .name {
+    font-family: 'Archivo Black';
+    font-size: 31px; line-height: 1.06; letter-spacing: 0.02em;
+  }
+  .logo-text .name .g { color: #37e08d; }
+  .logo-text .tag {
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.34em;
+    color: #5d8672; margin-top: 7px;
+  }
+  .badge {
+    display: flex; align-items: center; gap: 16px;
+    padding: 20px 30px;
+    border-radius: 999px;
+    border: 1px solid rgba(52,224,138,0.38);
+    background: linear-gradient(120deg, rgba(52,224,138,0.14), rgba(52,224,138,0.03));
+  }
+  .badge .lines { text-align: left; }
+  .badge .l1 { font-size: 20px; font-weight: 800; letter-spacing: 0.14em; color: #f2fbf6; }
+  .badge .l2 { font-size: 17px; font-weight: 800; letter-spacing: 0.2em; color: #37e08d; margin-top: 4px; }
+
+  /* ---------- title ---------- */
+  .title {
+    position: absolute;
+    top: 196px; left: 64px; right: 64px;
+  }
+  .title h1 {
+    font-family: 'Archivo Black';
+    font-size: 158px;
+    line-height: 1;
+    letter-spacing: -0.015em;
+    white-space: nowrap;
+  }
+  .title .iphone {
+    background: linear-gradient(100deg, #ffffff 5%, #cfe0d8 55%, #8fd4c9 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .title .num {
+    background: linear-gradient(175deg, #a8f5c4 10%, #2fd57f 85%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .base-model {
+    margin-top: 26px;
+    display: flex; align-items: center; gap: 24px;
+    color: #b9d6c6;
+    font-size: 29px; font-weight: 700; letter-spacing: 0.5em;
+  }
+  .base-model::before, .base-model::after {
+    content: ''; height: 1px; width: 64px;
+    background: linear-gradient(90deg, transparent, rgba(120,200,160,0.7));
+  }
+  .base-model::after {
+    background: linear-gradient(90deg, rgba(120,200,160,0.7), transparent);
+    flex: 0 0 64px;
+  }
+
+  /* ---------- chips ---------- */
+  .chips {
+    position: absolute;
+    top: 464px; left: 64px;
+    display: flex; gap: 18px;
+  }
+  .chip {
+    display: flex; align-items: center; gap: 12px;
+    padding: 17px 30px;
+    border-radius: 999px;
+    font-size: 22px; font-weight: 800; letter-spacing: 0.12em;
+    border: 1px solid rgba(190,220,205,0.28);
+    background: rgba(10, 34, 24, 0.72);
+    color: #f2fbf6;
+  }
+  .chip .dot {
+    width: 15px; height: 15px; border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255,255,255,0.55);
+  }
+  .chip.sealed {
+    border-color: rgba(52,224,138,0.45);
+    background: linear-gradient(120deg, rgba(52,224,138,0.16), rgba(52,224,138,0.04));
+    color: #4fe89c;
+  }
+
+  /* ---------- specs ---------- */
+  .specs {
+    position: absolute;
+    top: 596px; left: 64px;
+    width: 400px;
+  }
+  .spec {
+    display: flex; align-items: center; gap: 28px;
+    padding: 34px 0;
+  }
+  .spec + .spec { border-top: 1px solid rgba(110, 231, 168, 0.16); }
+  .spec-tile {
+    flex: 0 0 auto;
+    width: 96px; height: 96px;
+    border-radius: 24px;
+    background: linear-gradient(150deg, rgba(52,224,138,0.17), rgba(52,224,138,0.04));
+    border: 1px solid rgba(52,224,138,0.34);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .spec-info .value {
+    font-family: 'Archivo Black';
+    font-size: 52px; line-height: 1;
+    color: #f6fbf8;
+    letter-spacing: 0;
+  }
+  .spec-info .label {
+    margin-top: 12px;
+    font-size: 16.5px; font-weight: 700; letter-spacing: 0.22em;
+    color: #6f9c86;
+    line-height: 1.5;
+  }
+
+  /* ---------- phone ---------- */
+  .phone {
+    position: absolute;
+    top: 500px;
+    right: -28px;
+    width: 628px;
+    filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.55));
+  }
+
+  /* ---------- tagline ---------- */
+  .tagline {
+    position: absolute;
+    top: 1372px; left: 64px; right: 64px;
+    text-align: center;
+  }
+  .tagline .main {
+    display: flex; align-items: center; justify-content: center; gap: 28px;
+    font-size: 26px; font-weight: 800; letter-spacing: 0.42em;
+    color: #43e192;
+  }
+  .tagline .main::before, .tagline .main::after {
+    content: ''; height: 1px; flex: 0 0 90px;
+  }
+  .tagline .main::before { background: linear-gradient(90deg, transparent, rgba(67,225,146,0.6)); }
+  .tagline .main::after { background: linear-gradient(90deg, rgba(67,225,146,0.6), transparent); }
+  .tagline .sub {
+    margin-top: 16px;
+    font-size: 16px; font-weight: 700; letter-spacing: 0.34em;
+    color: #6f9c86;
+  }
+
+  /* ---------- price & payment cards ---------- */
+  .cards {
+    position: absolute;
+    top: 1478px; left: 64px; right: 64px;
+    display: flex; gap: 24px;
+  }
+  .card {
+    border-radius: 28px;
+    border: 1px solid rgba(110, 231, 168, 0.2);
+    background: linear-gradient(160deg, rgba(22, 58, 40, 0.55), rgba(10, 30, 21, 0.65));
+  }
+  .card.price {
+    flex: 1.25;
+    padding: 36px 44px 38px;
+  }
+  .kicker {
+    font-size: 18px; font-weight: 800; letter-spacing: 0.3em;
+    color: #37e08d;
+  }
+  .price .amount {
+    font-family: 'Archivo Black';
+    font-size: 92px; line-height: 1.04;
+    margin-top: 10px;
+    color: #f8fcfa;
+    letter-spacing: 0.01em;
+  }
+  .price .negotiable {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 28px;
+    border-radius: 999px;
+    background: #e9f4ee;
+    color: #0c231a;
+    font-size: 19px; font-weight: 800; letter-spacing: 0.08em;
+  }
+  .card.payment {
+    flex: 1;
+    padding: 36px 40px;
+    display: flex; align-items: center; gap: 26px;
+  }
+  .pay-tile {
+    flex: 0 0 auto;
+    width: 88px; height: 88px;
+    border-radius: 22px;
+    background: linear-gradient(150deg, rgba(52,224,138,0.9), rgba(26,168,98,0.9));
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 14px 30px rgba(20, 140, 80, 0.35);
+  }
+  .payment .terms {
+    margin-top: 14px;
+    font-size: 29px; font-weight: 700; line-height: 1.4;
+    color: #f2faf5;
+  }
+
+  /* ---------- contact ---------- */
+  .contact {
+    position: absolute;
+    top: 1748px; left: 64px; right: 64px;
+    border-radius: 28px;
+    border: 1px solid rgba(110, 231, 168, 0.2);
+    background: linear-gradient(160deg, rgba(22, 58, 40, 0.55), rgba(10, 30, 21, 0.65));
+    padding: 28px 44px;
+    display: flex; align-items: center; gap: 28px;
+  }
+  .contact-tile {
+    flex: 0 0 auto;
+    width: 84px; height: 84px;
+    border-radius: 22px;
+    background: linear-gradient(150deg, #35c9ec, #1490b8);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 14px 30px rgba(20, 130, 170, 0.35);
+  }
+  .contact .who .k {
+    font-size: 15px; font-weight: 800; letter-spacing: 0.32em; color: #79a893;
+  }
+  .contact .who .name {
+    font-family: 'Archivo Black';
+    font-size: 42px; line-height: 1.15; margin-top: 4px;
+  }
+  .contact .who .num {
+    font-size: 27px; font-weight: 700; color: #3ecdee; margin-top: 2px;
+    letter-spacing: 0.06em;
+  }
+  .contact .more {
+    margin-left: auto;
+    text-align: right;
+    font-size: 17px; font-weight: 800; letter-spacing: 0.26em;
+    color: #3ecdee; line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="header">
+    <div class="logo">
+      <div class="logo-tile">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <path d="M22 30V16" stroke="#37e08d" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M22 21c0-5 3.4-8.6 8.5-8.6.2 5.3-3.3 8.8-8.5 8.6z" fill="#37e08d"/>
+          <path d="M22 17c0-4-2.7-6.9-6.8-6.9-.2 4.3 2.6 7 6.8 6.9z" fill="#7fefb6"/>
+          <rect x="12" y="30" width="20" height="4.5" rx="2.2" stroke="#35c9ec" stroke-width="2.2"/>
+          <path d="M15 34.5v2.8M29 34.5v2.8M12.5 32.2h-3M34.5 32.2h-3" stroke="#35c9ec" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="the">THE</div>
+        <div class="name">TECH <span class="g">GARDEN</span></div>
+        <div class="tag">WHERE TECHNOLOGY BLOOMS</div>
+      </div>
+    </div>
+    <div class="badge">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <path d="M17 3l11 4v8c0 7-4.6 12.4-11 15C10.6 27.4 6 22 6 15V7l11-4z" stroke="#37e08d" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M11.5 16.5l3.8 3.8 7.2-7.6" stroke="#37e08d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="lines">
+        <div class="l1">BRAND NEW</div>
+        <div class="l2">100% SEALED</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="title">
+    <h1><span class="iphone">iPhone</span> <span class="num">17</span></h1>
+    <div class="base-model">BASE MODEL</div>
+  </div>
+
+  <div class="chips">
+    <div class="chip"><span class="dot"></span>WHITE COLOUR</div>
+    <div class="chip sealed">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="#4fe89c" stroke-width="2.2"/>
+        <path d="M7.5 12.2l3 3 6-6.4" stroke="#4fe89c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      SEALED
+    </div>
+  </div>
+
+  <div class="specs">
+    <div class="spec">
+      <div class="spec-tile">
+        <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+          <rect x="6" y="10" width="34" height="26" rx="5" stroke="#37e08d" stroke-width="2.6"/>
+          <circle cx="14.5" cy="23" r="3" fill="#37e08d"/>
+          <path d="M23 19.5h11M23 26.5h11" stroke="#7fefb6" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="spec-info">
+        <div class="value">256 GB</div>
+        <div class="label">STORAGE</div>
+      </div>
+    </div>
+    <div class="spec">
+      <div class="spec-tile">
+        <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+          <rect x="13" y="5" width="20" height="36" rx="4.5" stroke="#37e08d" stroke-width="2.6"/>
+          <path d="M20 9.5h6" stroke="#7fefb6" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="23" cy="35" r="2" fill="#7fefb6"/>
+        </svg>
+      </div>
+      <div class="spec-info">
+        <div class="value">6.1&quot;</div>
+        <div class="label">SUPER RETINA<br>XDR DISPLAY</div>
+      </div>
+    </div>
+    <div class="spec">
+      <div class="spec-tile">
+        <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+          <rect x="12" y="12" width="22" height="22" rx="4" stroke="#37e08d" stroke-width="2.6"/>
+          <rect x="19" y="19" width="8" height="8" rx="1.5" fill="#7fefb6"/>
+          <path d="M17 12V6M23 12V6M29 12V6M17 40v-6M23 40v-6M29 40v-6M12 17H6M12 23H6M12 29H6M40 17h-6M40 23h-6M40 29h-6" stroke="#37e08d" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="spec-info">
+        <div class="value">A19 Chip</div>
+        <div class="label">NEXT-GENERATION<br>PERFORMANCE</div>
+      </div>
+    </div>
+  </div>
+
+  <img class="phone" src="assets/phone.png" alt="iPhone 17, white, back and front view">
+
+  <div class="tagline">
+    <div class="main">WHERE TECHNOLOGY BLOOMS</div>
+    <div class="sub">THE TECH GARDEN</div>
+  </div>
+
+  <div class="cards">
+    <div class="card price">
+      <div class="kicker">PRICE</div>
+      <div class="amount">R20 000</div>
+      <div class="negotiable">But Negotiable</div>
+    </div>
+    <div class="card payment">
+      <div class="pay-tile">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <rect x="7" y="9" width="30" height="28" rx="5" stroke="#063018" stroke-width="2.8"/>
+          <path d="M7 17.5h30" stroke="#063018" stroke-width="2.8"/>
+          <path d="M15 5.5v7M29 5.5v7" stroke="#063018" stroke-width="2.8" stroke-linecap="round"/>
+          <path d="M13.5 24h5M19.8 24h5M26.4 24h5M13.5 30h5M19.8 30h5" stroke="#063018" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="kicker">PAYMENT TERMS</div>
+        <div class="terms">Deposit +<br>6 Months Plan</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact">
+    <div class="contact-tile">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <path d="M13.8 6.5c1 0 1.9.6 2.3 1.5l2 4.6c.4 1 .2 2.1-.6 2.8l-2 1.9a24.5 24.5 0 0 0 7.2 7.2l1.9-2c.7-.8 1.9-1 2.8-.6l4.6 2c.9.4 1.5 1.3 1.5 2.3v4c0 1.5-1.2 2.7-2.7 2.6C17.6 32 8 22.4 7.2 9.2c-.1-1.5 1.1-2.7 2.6-2.7h4z" fill="#053043"/>
+      </svg>
+    </div>
+    <div class="who">
+      <div class="k">PLEASE CONTACT</div>
+      <div class="name">BRADLEY</div>
+      <div class="num">on 065 825 3886</div>
+    </div>
+    <div class="more">FOR MORE<br>DETAILS</div>
+  </div>
+
+</div>
+</body>
+</html>
