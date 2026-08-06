@@ -170,7 +170,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 16px;
-    height: 466px;
+    height: 440px;
   }
   .cell {
     border-radius: 26px;
@@ -200,7 +200,7 @@
   }
   .side-photo {
     flex: 0 0 314px;
-    height: 466px;
+    height: 440px;
     border-radius: 26px;
     overflow: hidden;
     border: 1px solid rgba(110, 231, 168, 0.2);
@@ -223,15 +223,36 @@
     line-height: 1.6;
   }
 
-  /* ---------- details ---------- */
-  .details {
+  /* ---------- price + details row ---------- */
+  .bottom-row {
     position: absolute;
-    top: 1508px; left: 64px; right: 64px;
+    top: 1476px; left: 64px; right: 64px;
+    display: flex; gap: 20px;
+    align-items: stretch;
+  }
+  .price-card {
+    flex: 0 0 336px;
     border-radius: 26px;
     border: 1px solid rgba(110, 231, 168, 0.2);
     background: linear-gradient(160deg, rgba(22, 58, 40, 0.55), rgba(10, 30, 21, 0.65));
-    padding: 26px 34px;
-    display: flex; align-items: center; gap: 26px;
+    padding: 28px 32px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .price-card .amount {
+    font-family: 'Archivo Black';
+    font-size: 55px; line-height: 1.05;
+    white-space: nowrap;
+    margin-top: 10px;
+    color: #f8fcfa;
+    letter-spacing: 0.01em;
+  }
+  .details {
+    flex: 1 1 auto;
+    border-radius: 26px;
+    border: 1px solid rgba(110, 231, 168, 0.2);
+    background: linear-gradient(160deg, rgba(22, 58, 40, 0.55), rgba(10, 30, 21, 0.65));
+    padding: 26px 30px;
+    display: flex; align-items: center; gap: 24px;
   }
   .details .tile {
     flex: 0 0 auto;
@@ -247,7 +268,7 @@
   }
   .details .text {
     margin-top: 8px;
-    font-size: 19px; font-weight: 600; line-height: 1.55;
+    font-size: 17.5px; font-weight: 600; line-height: 1.55;
     color: #cfe5d8;
   }
   .details .text b { color: #f2faf5; font-weight: 800; }
@@ -255,7 +276,7 @@
   /* ---------- contact ---------- */
   .contact {
     position: absolute;
-    top: 1694px; left: 64px; right: 64px;
+    top: 1714px; left: 64px; right: 64px;
     border-radius: 28px;
     border: 1px solid rgba(110, 231, 168, 0.2);
     background: linear-gradient(160deg, rgba(22, 58, 40, 0.55), rgba(10, 30, 21, 0.65));
@@ -291,7 +312,7 @@
   /* ---------- footer tagline ---------- */
   .foot {
     position: absolute;
-    bottom: 34px; left: 64px; right: 64px;
+    bottom: 20px; left: 64px; right: 64px;
     text-align: center;
     font-size: 14px; font-weight: 700; letter-spacing: 0.34em;
     color: #4f7a64;
@@ -411,6 +432,11 @@
     </div>
   </div>
 
+  <div class="bottom-row">
+  <div class="price-card">
+    <div class="kicker">PRICE</div>
+    <div class="amount">R10 000</div>
+  </div>
   <div class="details">
     <div class="tile">
       <svg width="38" height="38" viewBox="0 0 46 46" fill="none">
@@ -427,6 +453,7 @@
         <b>20W or higher USB-C PD</b> power source; the <b>Apple 20W USB-C Power Adapter</b> is recommended.
       </div>
     </div>
+  </div>
   </div>
 
   <div class="contact">
