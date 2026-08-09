@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weightloss Nut — New Label Change</title>
+<style>
+  @font-face {
+    font-family: 'Archivo';
+    src: url('../assets/fonts/Archivo.woff2') format('woff2');
+    font-weight: 100 900;
+  }
+  @font-face {
+    font-family: 'Archivo Black';
+    src: url('../assets/fonts/ArchivoBlack.woff2') format('woff2');
+    font-weight: 400;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; }
+  body { font-family: 'Archivo', 'DejaVu Sans', sans-serif; color: #1c2b22; }
+
+  .poster {
+    position: relative;
+    width: 1080px; height: 1350px;
+    background:
+      radial-gradient(700px 500px at 50% -8%, rgba(47, 174, 95, 0.10), transparent 65%),
+      radial-gradient(800px 600px at 50% 112%, rgba(47, 174, 95, 0.12), transparent 60%),
+      linear-gradient(180deg, #ffffff 0%, #f6faf7 100%);
+    overflow: hidden;
+    text-align: center;
+  }
+
+  /* ---------- brand header ---------- */
+  .brand {
+    padding-top: 56px;
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+  }
+  .brand .mark {
+    width: 84px; height: 84px;
+    border-radius: 50%;
+    background: linear-gradient(150deg, #38c26c, #1e8f4e);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 12px 28px rgba(30, 143, 78, 0.28);
+  }
+  .brand .name {
+    font-family: 'Archivo Black';
+    font-size: 54px; line-height: 1;
+    color: #14261b;
+  }
+  .brand .name .g { color: #1e8f4e; }
+
+  /* ---------- headline ---------- */
+  .headline {
+    margin-top: 40px;
+  }
+  .headline .kicker {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 999px;
+    background: rgba(217, 48, 37, 0.08);
+    border: 1px solid rgba(217, 48, 37, 0.25);
+    color: #d93025;
+    font-size: 17px; font-weight: 800; letter-spacing: 0.26em;
+  }
+  .headline h1 {
+    margin-top: 20px;
+    font-family: 'Archivo Black';
+    font-size: 74px; line-height: 1;
+    color: #d93025;
+    letter-spacing: 0.01em;
+  }
+
+  /* ---------- comparison ---------- */
+  .compare {
+    margin: 52px auto 0;
+    width: 952px;
+    display: flex; align-items: stretch; justify-content: center; gap: 26px;
+  }
+  .pouch-card {
+    flex: 0 0 330px;
+    background: #ffffff;
+    border: 1px solid #e3ede6;
+    border-radius: 26px;
+    box-shadow: 0 18px 40px rgba(20, 60, 35, 0.08);
+    padding: 26px 24px 22px;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  }
+  .pouch-card img { height: 330px; display: block; }
+  .pouch-card .cap {
+    margin-top: 18px;
+    font-size: 16px; font-weight: 800; letter-spacing: 0.22em;
+    color: #7c9486;
+  }
+  .pouch-card.new { border-color: rgba(30, 143, 78, 0.45); }
+  .pouch-card.new .cap { color: #1e8f4e; }
+  .mid {
+    flex: 0 0 220px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+  }
+  .mid .new-label {
+    font-family: 'Archivo Black';
+    font-size: 30px; color: #14261b; line-height: 1.15;
+  }
+  .mid .product {
+    font-size: 22px; font-weight: 700; color: #1e8f4e; line-height: 1.3;
+  }
+
+  /* ---------- body copy ---------- */
+  .copy {
+    margin: 54px auto 0;
+    width: 880px;
+    font-size: 24.5px; font-weight: 500; line-height: 1.62;
+    color: #33463b;
+  }
+  .copy b { color: #14261b; font-weight: 800; }
+  .copy .closing { margin-top: 18px; color: #1e8f4e; font-weight: 700; }
+
+  /* ---------- contact footer ---------- */
+  .contact {
+    position: absolute;
+    left: 64px; right: 64px; bottom: 56px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, #1e8f4e, #157a40);
+    box-shadow: 0 18px 40px rgba(30, 143, 78, 0.3);
+    padding: 24px 44px;
+    display: flex; align-items: center; justify-content: center; gap: 34px;
+    color: #ffffff;
+  }
+  .contact .item {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 21px; font-weight: 700;
+    white-space: nowrap;
+  }
+  .contact .item svg { flex: 0 0 auto; }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="brand">
+    <div class="mark">
+      <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+        <path d="M23 40c-8-2.5-13-8.8-13-17V12l13-5 13 5v11c0 8.2-5 14.5-13 17z" fill="#ffffff" opacity="0.16"/>
+        <path d="M23 32V19" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/>
+        <path d="M23 24c0-5.5 3.8-9.5 9.4-9.5.2 5.9-3.7 9.7-9.4 9.5z" fill="#ffffff"/>
+        <path d="M23 20c0-4.4-3-7.6-7.5-7.6-.2 4.7 2.9 7.8 7.5 7.6z" fill="#d8f5e3"/>
+        <path d="M15.5 33.5c2 1.7 4.6 2.8 7.5 3.5 2.9-.7 5.5-1.8 7.5-3.5" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="name">WEIGHTLOSS <span class="g">NUT</span></div>
+  </div>
+
+  <div class="headline">
+    <div class="kicker">IMPORTANT UPDATE</div>
+    <h1>NEW LABEL CHANGE</h1>
+  </div>
+
+  <div class="compare">
+    <div class="pouch-card">
+      <img src="assets/old_label.jpg" alt="Moringa capsules pouch with the old label">
+      <div class="cap">OLD LABEL</div>
+    </div>
+    <div class="mid">
+      <svg width="150" height="74" viewBox="0 0 150 74" fill="none">
+        <path d="M12 62C34 18 106 10 132 34" stroke="#14261b" stroke-width="7" stroke-linecap="round"/>
+        <path d="M136 20l4 18-19 1" stroke="#14261b" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <div class="new-label">NEW<br>LABEL</div>
+      <div class="product">Moringa<br>Pouche 120</div>
+    </div>
+    <div class="pouch-card new">
+      <img src="assets/new_label.jpg" alt="Moringa capsules pouch with the new SAHPRA-aligned label">
+      <div class="cap">NEW LABEL</div>
+    </div>
+  </div>
+
+  <div class="copy">
+    Weightloss Nut labels have recently been updated to align with <b>SAHPRA guidelines</b>.
+    While the packaging and names may look different, <b>the formulations inside remain
+    exactly the same</b> &mdash; the same quality, purity and effectiveness you&rsquo;ve always trusted.
+    <div class="closing">Now presented in a clearer, more compliant and client-friendly way.</div>
+  </div>
+
+  <div class="contact">
+    <div class="item">
+      <svg width="26" height="26" viewBox="0 0 40 40" fill="none">
+        <path d="M13.8 6.5c1 0 1.9.6 2.3 1.5l2 4.6c.4 1 .2 2.1-.6 2.8l-2 1.9a24.5 24.5 0 0 0 7.2 7.2l1.9-2c.7-.8 1.9-1 2.8-.6l4.6 2c.9.4 1.5 1.3 1.5 2.3v4c0 1.5-1.2 2.7-2.7 2.6C17.6 32 8 22.4 7.2 9.2c-.1-1.5 1.1-2.7 2.6-2.7h4z" fill="#ffffff"/>
+      </svg>
+      +27 65 145 5972
+    </div>
+    <div class="item">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="#ffffff" stroke-width="2"/>
+        <path d="M15.5 8.5H14c-.8 0-1.5.7-1.5 1.5v2h3l-.5 2.5h-2.5V21" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Fadwah Du Toit Petersen
+    </div>
+    <div class="item">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <rect x="3" y="3" width="18" height="18" rx="5" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="12" cy="12" r="4.2" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="17.2" cy="6.8" r="1.4" fill="#ffffff"/>
+      </svg>
+      dutoitpetersen
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
