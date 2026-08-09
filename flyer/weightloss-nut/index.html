@@ -22,11 +22,25 @@
     position: relative;
     width: 1080px; height: 1350px;
     background:
-      radial-gradient(700px 500px at 50% -8%, rgba(47, 174, 95, 0.10), transparent 65%),
-      radial-gradient(800px 600px at 50% 112%, rgba(47, 174, 95, 0.12), transparent 60%),
-      linear-gradient(180deg, #ffffff 0%, #f6faf7 100%);
+      radial-gradient(560px 560px at -6% 4%, rgba(58, 211, 114, 0.35), transparent 62%),
+      radial-gradient(520px 520px at 106% 12%, rgba(255, 196, 0, 0.30), transparent 62%),
+      radial-gradient(600px 600px at -4% 96%, rgba(255, 122, 89, 0.25), transparent 60%),
+      radial-gradient(680px 680px at 104% 92%, rgba(58, 211, 114, 0.35), transparent 62%),
+      linear-gradient(170deg, #f2fff6 0%, #e8fbef 55%, #eafcf1 100%);
     overflow: hidden;
     text-align: center;
+  }
+  .poster::before, .poster::after {
+    content: '';
+    position: absolute; border-radius: 50%;
+    pointer-events: none;
+  }
+  .poster::before {
+    width: 26px; height: 26px; left: 52px; top: 252px;
+    background: #ffc400;
+    box-shadow: 880px 30px 0 -6px #ff7a59, 40px 620px 0 -8px #3ad372,
+                830px 610px 0 -4px #ffc400, 90px 900px 0 -10px #ff7a59,
+                900px 950px 0 -8px #3ad372, 480px 80px 0 -10px #3ad372;
   }
 
   /* ---------- brand header ---------- */
@@ -35,18 +49,21 @@
     display: flex; flex-direction: column; align-items: center; gap: 14px;
   }
   .brand .mark {
-    width: 84px; height: 84px;
+    width: 96px; height: 96px;
     border-radius: 50%;
-    background: linear-gradient(150deg, #38c26c, #1e8f4e);
+    background: linear-gradient(150deg, #45e283, #14a355);
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 12px 28px rgba(30, 143, 78, 0.28);
+    box-shadow: 0 16px 36px rgba(20, 163, 85, 0.45), 0 0 0 10px rgba(58, 211, 114, 0.18);
   }
   .brand .name {
     font-family: 'Archivo Black';
     font-size: 54px; line-height: 1;
     color: #14261b;
   }
-  .brand .name .g { color: #1e8f4e; }
+  .brand .name .g {
+    background: linear-gradient(120deg, #14a355, #45e283);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
 
   /* ---------- headline ---------- */
   .headline {
@@ -54,19 +71,22 @@
   }
   .headline .kicker {
     display: inline-block;
-    padding: 12px 26px;
+    padding: 13px 30px;
     border-radius: 999px;
-    background: rgba(217, 48, 37, 0.08);
-    border: 1px solid rgba(217, 48, 37, 0.25);
-    color: #d93025;
+    background: linear-gradient(120deg, #ff5a4e, #e6231b);
+    color: #ffffff;
     font-size: 17px; font-weight: 800; letter-spacing: 0.26em;
+    box-shadow: 0 10px 24px rgba(230, 35, 27, 0.35);
+    transform: rotate(-1.5deg);
   }
   .headline h1 {
-    margin-top: 20px;
+    margin-top: 22px;
     font-family: 'Archivo Black';
-    font-size: 74px; line-height: 1;
-    color: #d93025;
+    font-size: 78px; line-height: 1;
+    background: linear-gradient(110deg, #ff3d33 10%, #e6231b 50%, #ff7a1f 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
     letter-spacing: 0.01em;
+    filter: drop-shadow(0 6px 0 rgba(230, 35, 27, 0.15));
   }
 
   /* ---------- comparison ---------- */
@@ -78,11 +98,13 @@
   .pouch-card {
     flex: 0 0 330px;
     background: #ffffff;
-    border: 1px solid #e3ede6;
-    border-radius: 26px;
-    box-shadow: 0 18px 40px rgba(20, 60, 35, 0.08);
+    border: 3px solid #d7ebde;
+    border-radius: 30px;
+    box-shadow: 0 22px 46px rgba(20, 80, 45, 0.16);
     padding: 26px 24px 22px;
     display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+    position: relative;
+    transform: rotate(-2.5deg);
   }
   .pouch-card img { height: 330px; display: block; }
   .pouch-card .cap {
@@ -90,8 +112,24 @@
     font-size: 16px; font-weight: 800; letter-spacing: 0.22em;
     color: #7c9486;
   }
-  .pouch-card.new { border-color: rgba(30, 143, 78, 0.45); }
-  .pouch-card.new .cap { color: #1e8f4e; }
+  .pouch-card.new {
+    border-color: #2fd57f;
+    transform: rotate(2.5deg);
+    box-shadow: 0 22px 46px rgba(20, 163, 85, 0.28);
+  }
+  .pouch-card.new .cap { color: #14a355; }
+  .pouch-card.new::after {
+    content: 'NEW!';
+    position: absolute; top: -26px; right: -26px;
+    width: 92px; height: 92px;
+    background:
+      radial-gradient(circle, #ffc400 0 100%);
+    clip-path: polygon(50% 0%, 61% 14%, 78% 8%, 81% 25%, 98% 30%, 89% 45%, 100% 57%, 85% 66%, 87% 84%, 70% 82%, 62% 98%, 50% 86%, 38% 98%, 30% 82%, 13% 84%, 15% 66%, 0% 57%, 11% 45%, 2% 30%, 19% 25%, 22% 8%, 39% 14%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Archivo Black';
+    font-size: 19px; color: #7a4b00;
+    transform: rotate(12deg);
+  }
   .mid {
     flex: 0 0 220px;
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
@@ -101,7 +139,14 @@
     font-size: 30px; color: #14261b; line-height: 1.15;
   }
   .mid .product {
-    font-size: 22px; font-weight: 700; color: #1e8f4e; line-height: 1.3;
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 14px;
+    background: #14a355;
+    color: #ffffff;
+    font-size: 21px; font-weight: 800; line-height: 1.3;
+    box-shadow: 0 10px 22px rgba(20, 163, 85, 0.3);
+    transform: rotate(-1.5deg);
   }
 
   /* ---------- body copy ---------- */
@@ -112,15 +157,20 @@
     color: #33463b;
   }
   .copy b { color: #14261b; font-weight: 800; }
-  .copy .closing { margin-top: 18px; color: #1e8f4e; font-weight: 700; }
+  .copy .hl {
+    font-weight: 800; color: #14261b;
+    background: linear-gradient(180deg, transparent 55%, #ffe27a 55% 92%, transparent 92%);
+    padding: 0 4px;
+  }
+  .copy .closing { margin-top: 18px; color: #14a355; font-weight: 800; }
 
   /* ---------- contact footer ---------- */
   .contact {
     position: absolute;
     left: 64px; right: 64px; bottom: 56px;
     border-radius: 999px;
-    background: linear-gradient(120deg, #1e8f4e, #157a40);
-    box-shadow: 0 18px 40px rgba(30, 143, 78, 0.3);
+    background: linear-gradient(120deg, #2fd57f, #12994f);
+    box-shadow: 0 18px 40px rgba(20, 163, 85, 0.45);
     padding: 24px 44px;
     display: flex; align-items: center; justify-content: center; gap: 34px;
     color: #ffffff;
@@ -161,8 +211,8 @@
     </div>
     <div class="mid">
       <svg width="150" height="74" viewBox="0 0 150 74" fill="none">
-        <path d="M12 62C34 18 106 10 132 34" stroke="#14261b" stroke-width="7" stroke-linecap="round"/>
-        <path d="M136 20l4 18-19 1" stroke="#14261b" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M12 62C34 18 106 10 132 34" stroke="#ff7a1f" stroke-width="9" stroke-linecap="round"/>
+        <path d="M136 20l4 18-19 1" stroke="#ff7a1f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </svg>
       <div class="new-label">NEW<br>LABEL</div>
       <div class="product">Moringa<br>Pouche 120</div>
@@ -175,8 +225,8 @@
 
   <div class="copy">
     Weightloss Nut labels have recently been updated to align with <b>SAHPRA guidelines</b>.
-    While the packaging and names may look different, <b>the formulations inside remain
-    exactly the same</b> &mdash; the same quality, purity and effectiveness you&rsquo;ve always trusted.
+    While the packaging and names may look different, <span class="hl">the formulations inside
+    remain exactly the same</span> &mdash; the same quality, purity and effectiveness you&rsquo;ve always trusted.
     <div class="closing">Now presented in a clearer, more compliant and client-friendly way.</div>
   </div>
 
