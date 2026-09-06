@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+  </style>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Sora', sans-serif;
+      background: linear-gradient(135deg, #0a1f3f 0%, #1a0f35 50%, #0f2a4a 100%);
+      overflow: hidden;
+    }
+    a { color: #00d4ff; text-decoration: none; }
+    a:hover { color: #00f0ff; text-decoration: underline; }
+    .scene { perspective: 1200px; }
+    .card-3d {
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease-out;
+    }
+    .card-3d:hover {
+      transform: rotateX(5deg) rotateY(-5deg) translateZ(20px);
+    }
+  </style>
+</helmet>
+
+<div style="width: 1080px; height: 1920px; background: linear-gradient(135deg, #0f1f45 0%, #1a0f35 50%, #0f2a4a 100%); position: relative; overflow: hidden; padding: 0; margin: 0;">
+
+  <!-- Animated gradient background elements -->
+  <div style="position: absolute; width: 800px; height: 800px; background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%); top: -200px; right: -100px; border-radius: 50%; filter: blur(60px);"></div>
+  <div style="position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(100, 200, 255, 0.1) 0%, transparent 70%); bottom: -150px; left: -50px; border-radius: 50%; filter: blur(50px);"></div>
+  <div style="position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0, 255, 200, 0.08) 0%, transparent 70%); top: 400px; right: 100px; border-radius: 50%; filter: blur(40px);"></div>
+
+  <!-- Header -->
+  <div style="position: absolute; top: 60px; left: 60px; right: 60px; z-index: 10;">
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3); transform: rotateX(10deg) rotateZ(5deg);">
+        <span style="font-size: 48px; font-weight: 800; color: white; font-family: 'Space Mono', monospace;">✨</span>
+      </div>
+      <div>
+        <div style="font-size: 14px; font-weight: 600; letter-spacing: 2px; color: #00d4ff; text-transform: uppercase;">Premium Service</div>
+        <div style="font-size: 32px; font-weight: 800; color: white; letter-spacing: -1px;">GIDEON'S</div>
+        <div style="font-size: 16px; font-weight: 600; color: #64c8ff; letter-spacing: 1px;">CAR WASH PRO</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div style="position: absolute; top: 200px; left: 60px; right: 60px; text-align: center; z-index: 5;">
+    <!-- Hero Title -->
+    <div style="margin-bottom: 40px;">
+      <h1 style="font-size: 96px; font-weight: 800; line-height: 0.9; margin: 0; letter-spacing: -2px; color: white; text-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);">
+        SHINE <span style="background: linear-gradient(135deg, #00d4ff 0%, #00ffcc 50%, #64ff00 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">LIKE</span>
+      </h1>
+      <h2 style="font-size: 84px; font-weight: 800; line-height: 0.9; margin: 0; letter-spacing: -2px; background: linear-gradient(135deg, #00ffcc 0%, #00d4ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">NEW</h2>
+    </div>
+
+    <!-- Feature badges in 3D perspective -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 80px 0;">
+      <!-- Badge 1 -->
+      <div style="padding: 32px 24px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 200, 255, 0.05) 100%); border: 2px solid rgba(0, 212, 255, 0.4); border-radius: 24px; backdrop-filter: blur(10px); transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0, 212, 255, 0.2);">
+        <div style="font-size: 32px; margin-bottom: 12px;">💧</div>
+        <div style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 8px;">ECO-FRIENDLY</div>
+        <div style="font-size: 13px; color: #64c8ff; font-weight: 500;">Water & energy efficient</div>
+      </div>
+      <!-- Badge 2 -->
+      <div style="padding: 32px 24px; background: linear-gradient(135deg, rgba(0, 255, 200, 0.15) 0%, rgba(0, 200, 200, 0.05) 100%); border: 2px solid rgba(0, 255, 200, 0.4); border-radius: 24px; backdrop-filter: blur(10px); transform: translateY(-15px); box-shadow: 0 20px 50px rgba(0, 255, 200, 0.2);">
+        <div style="font-size: 32px; margin-bottom: 12px;">⚡</div>
+        <div style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 8px;">FAST SERVICE</div>
+        <div style="font-size: 13px; color: #64ffcc; font-weight: 500;">20 mins or less</div>
+      </div>
+      <!-- Badge 3 -->
+      <div style="padding: 32px 24px; background: linear-gradient(135deg, rgba(100, 255, 0, 0.15) 0%, rgba(80, 200, 0, 0.05) 100%); border: 2px solid rgba(100, 255, 0, 0.4); border-radius: 24px; backdrop-filter: blur(10px); transform: translateY(-10px); box-shadow: 0 20px 50px rgba(100, 255, 0, 0.2);">
+        <div style="font-size: 32px; margin-bottom: 12px;">⭐</div>
+        <div style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 8px;">5-STAR RATED</div>
+        <div style="font-size: 13px; color: #90ff40; font-weight: 500;">100% satisfaction</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gideon profile section -->
+  <div style="position: absolute; bottom: 280px; left: 60px; right: 60px; z-index: 5;">
+    <div style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.12) 0%, rgba(100, 200, 255, 0.05) 100%); border: 2px solid rgba(0, 212, 255, 0.3); border-radius: 28px; padding: 40px; backdrop-filter: blur(15px); box-shadow: 0 30px 80px rgba(0, 212, 255, 0.15);">
+      <div style="display: flex; gap: 32px; align-items: center;">
+        <!-- Avatar -->
+        <div style="flex-shrink: 0;">
+          <div style="width: 140px; height: 140px; background: linear-gradient(135deg, #00d4ff 0%, #00ffcc 100%); border-radius: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 60px rgba(0, 212, 255, 0.4); font-size: 80px;">
+            👨‍💼
+          </div>
+        </div>
+        <!-- Info -->
+        <div style="flex: 1;">
+          <div style="font-size: 16px; font-weight: 600; color: #00ffcc; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Meet Your Expert</div>
+          <h3 style="font-size: 48px; font-weight: 800; color: white; margin: 0 0 12px 0; letter-spacing: -1px;">GIDEON</h3>
+          <p style="font-size: 18px; color: #64c8ff; margin: 0; font-weight: 500;">15+ Years of Professional Care<br/>Certified Master Detailer • Fleet Specialist</p>
+          <div style="margin-top: 16px; display: flex; gap: 16px;">
+            <div style="padding: 8px 16px; background: rgba(0, 212, 255, 0.2); border-radius: 12px; font-size: 13px; color: white; font-weight: 600;">✓ Certified</div>
+            <div style="padding: 8px 16px; background: rgba(0, 255, 200, 0.2); border-radius: 12px; font-size: 13px; color: white; font-weight: 600;">✓ Insured</div>
+            <div style="padding: 8px 16px; background: rgba(100, 255, 0, 0.2); border-radius: 12px; font-size: 13px; color: white; font-weight: 600;">✓ Trusted</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div style="position: absolute; bottom: 60px; left: 60px; right: 60px; display: flex; gap: 20px; z-index: 5;">
+    <!-- Primary CTA -->
+    <button style="flex: 1; padding: 28px; background: linear-gradient(135deg, #00d4ff 0%, #00ffcc 100%); border: none; border-radius: 20px; font-size: 22px; font-weight: 800; color: #0a1f3f; cursor: pointer; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 20px 60px rgba(0, 212, 255, 0.4); transition: all 0.3s ease; text-decoration: none;">
+      📱 BOOK NOW
+    </button>
+    <!-- Secondary CTA -->
+    <button style="flex: 1; padding: 28px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 255, 200, 0.1) 100%); border: 2px solid rgba(0, 212, 255, 0.5); border-radius: 20px; font-size: 22px; font-weight: 800; color: white; cursor: pointer; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2); transition: all 0.3s ease;">
+      ⭐ LEARN MORE
+    </button>
+  </div>
+
+  <!-- Corner accent -->
+  <div style="position: absolute; bottom: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle at bottom-right, rgba(0, 255, 200, 0.2) 0%, transparent 70%); border-radius: 50% 0 0 0; filter: blur(40px); pointer-events: none;"></div>
+</div>
+
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
