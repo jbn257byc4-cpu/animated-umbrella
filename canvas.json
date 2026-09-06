@@ -1,0 +1,7 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1080, "h": 1920, "title": "Desktop / Web" },
+    { "file": "WhatsApp.dc.html", "x": 1200, "y": 0, "w": 1080, "h": 1920, "title": "WhatsApp Status" }
+  ],
+  "launch": { "view": "canvas" }
+}
